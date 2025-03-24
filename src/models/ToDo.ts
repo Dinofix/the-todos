@@ -1,3 +1,5 @@
-export class ToDo {
-  constructor(public id: number, public task: string, public isDone: boolean) {}
-}
+export type ToDo = {
+  id: number;
+  task: string;
+  isDone: boolean;
+};

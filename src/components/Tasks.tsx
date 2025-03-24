@@ -6,16 +6,15 @@ export const Tasks = () => {
 
   useEffect(() => {
     const stored = localStorage.getItem("tasks");
-
     if (stored) {
       setTasks(JSON.parse(stored));
     } else {
-      const defaultTasks = [
-        new ToDo(1, "Bygga raketer", false),
-        new ToDo(2, "Fightas med mumier", false),
-        new ToDo(3, "Stå i eiffeltornet och rapa", false),
-        new ToDo(4, "Upptäcka något som aldrig funnits", false),
-        new ToDo(5, "Tvätta och bada en apa", false),
+      const defaultTasks: ToDo[] = [
+        { id: 1, task: "Bygga raketer", isDone: false },
+        { id: 2, task: "Fightas med mumier", isDone: false },
+        { id: 3, task: "Stå i eiffeltornet och rapa", isDone: false },
+        { id: 4, task: "Upptäcka något som aldrig funnits", isDone: false },
+        { id: 5, task: "Tvätta och bada en apa", isDone: false },
       ];
       setTasks(defaultTasks);
       localStorage.setItem("tasks", JSON.stringify(defaultTasks));
