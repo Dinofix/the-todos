@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ToDo } from "../models/ToDo";
 
 export const Tasks = () => {
-  const initialTasks = JSON.parse(localStorage.getItem("tasks")) || [
+  const initialTasks = JSON.parse(localStorage.getItem("tasks") ?? "[]") || [
     new ToDo(1, "Bygga raketer", false),
     new ToDo(2, "Fightas med mumier", false),
     new ToDo(3, "Stå i eiffeltornet och rapa", false),
